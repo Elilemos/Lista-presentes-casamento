@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('/api/present', {
+            const response = await fetch('/api/reserve-gift', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    id: giftId,
-                    guest_name: guestName,
-                    guest_phone: guestPhone
-                }),
-            });
+                 id: giftId,
+                        guest_name: guestName,
+                        guest_phone: guestPhone
+                    }),
+        });
             const data = await response.json();
             if (response.ok) {
                 successMessage.textContent = "Reserva confirmada com sucesso! Redirecionando...";
