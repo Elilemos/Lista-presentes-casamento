@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const giftId = form.dataset.giftId;
+
         const guestName = document.getElementById('guest-name').value;
         const guestPhone = document.getElementById('guest-phone').value;
         
@@ -22,38 +22,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-    const response = await fetch('/api/reserve-gift', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            id: giftId,
-            guest_name: guestName,
-            guest_phone: guestPhone
-        }),
-    });
+            const response = await fetch('/api/reserve-gift', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: giftId,
+                    guest_name: guestName,
+                    guest_phone: guestPhone
+                }),
+            });
+            const data = await response.json();
 
-    const data = await response.json();
-
-    if (data.message === 'success') {
-        successMessage.textContent = "Reserva confirmada com sucesso! Redirecionando...";
-        successMessage.style.display = 'block';
-        successMessage.style.color = 'white';
-        
-        setTimeout(() => {
-            window.location.href = '/';
-        }, 1000);
-    } else {
-        successMessage.textContent = data.error || "Erro ao reservar. Tente novamente.";
-        successMessage.style.display = 'block';
-        successMessage.style.color = 'red';
-        console.error(data.error);
-        alert(data.error);
-    }
-} catch (error) {
-    successMessage.textContent = "Ocorreu um erro ao reservar o presente.";
-    successMessage.style.display = 'block';
-    successMessage.style.color = 'red';
-    console.error("Erro ao reservar o presente:", error);
-}
+            if (data.message === 'success') {
+                successMessage.textContent = "Reserva confirmada com sucesso! Redirecionando...";
+                successMessage.style.display = 'block';
+                successMessage.style.color = 'white';
+                
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1000);
+            } else {
+                successMessage.textContent = data.error || "Erro ao reservar. Tente novamente.";
+                successMessage.style.display = 'block';
+                successMessage.style.color = 'red';
+                console.error(data.error);
+                alert(data.error);
+            }
+        } catch (error) {
+            successMessage.textContent = "Ocorreu um erro ao reservar o presente.";
+            successMessage.style.display = 'block';
+            successMessage.style.color = 'red';
+            console.error("Erro ao reservar o presente:", error);
+            }
     });
 });
