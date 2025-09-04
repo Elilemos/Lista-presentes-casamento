@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParts = window.location.pathname.split('/');
     const giftId = urlParts[urlParts.length - 1];
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-        const guestName = guestNameInput.value;
-        const guestPhone = guestPhoneInput.value;
+        const giftId = form.dataset.giftId;
+        const guestName = document.getElementById('guest-name').value;
+        const guestPhone = document.getElementById('guest-phone').value;
         
         if (!guestName) {
             alert("Por favor, digite seu nome.");
@@ -25,13 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                 id: giftId,
-                        guest_name: guestName,
-                        guest_phone: guestPhone
-                    }),
+                    id: giftId,
+                    guest_name: guestName,
+                    guest_phone: guestPhone
+                }),
         });
             const data = await response.json();
-            if (response.ok) {
+
+            if (data.message === 'success') {
                 successMessage.textContent = "Reserva confirmada com sucesso! Redirecionando...";
                 successMessage.style.display = 'block';
                 successMessage.style.color = 'white';
