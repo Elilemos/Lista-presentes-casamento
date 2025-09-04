@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentes Reservados</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      color: white;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    h1 { text-align: center; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #12c5fb9e;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Presentes Reservados</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Presente</th>
+        <th>Convidado</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="reserved-list"></tbody>
+  </table>
+
+  <script>
+  async function fetchReserved() {
+    try {
+      const response = await fetch('/api/given-gifts');
+      const data = await response.json();
+      const tbody = document.getElementById('reserved-list');
+      tbody.innerHTML = '';
+      data.data.forEach(gift => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${gift.name}</td>
+          <td>${gift.guest_name || '-'}</td>
+          <td>${gift.guest_phone || '-'}</td>
+          <td><button class="cancel-btn" data-id="${gift.id}">Cancelar</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+    } catch (err) {
+      console.error("Erro ao buscar presentes reservados:", err);
+    }
+  }
+
+  fetchReserved();
+
+  document.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('cancel-btn')) {
+      const giftId = e.target.dataset.id;
+
+      if (confirm("Tem certeza que deseja cancelar esta reserva?")) {
+        try {
+          const response = await fetch('/api/unreserve-gift', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: giftId })
+          });
+          const data = await response.json();
+          if (response.ok) {
+            alert("Reserva cancelada!");
+            window.location.href = '/'; 
+          } else {
+            alert("Erro ao cancelar: " + data.error);
+          }
+        } catch (err) {
+          console.error("Erro ao cancelar reserva:", err);
+          alert("Erro no cancelamento, tente novamente.");
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
