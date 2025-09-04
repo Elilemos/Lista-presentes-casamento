@@ -47,7 +47,7 @@ const createAndPopulateDb = async () => {
             { name: "Kit 1 Cobre Leito", price: 0.00, image: "img/Kit 1 Cobre-leito Queen - Tons Escuros.jpg" },
             { name: "Kit 2 cobertores", price: 0.00, image: "img/Kit 2 cobertores.jpg" },
             { name: "Kit 2 mesas de cabeceira", price: 0.00, image: "img/Kit 2 mesas de cabeceira.jpg" },
-            { name: "Kit 2 Travesseiros", price: 0.00, image: "img/Kit 2 travesseiros.jpg" },
+            { name: "Kit 2 Travesseiros", price: 0.00, image: "img/Kit 2 Travesseiros.jpg" },
             { name: "Kit Cobre Leito Colcha Queen 3 Peças", price: 0.00, image: "img/Kit Cobre Leito Colcha Queen 3Pç.jpg" },
             { name: "Kit 4 Toalhas", price: 0.00, image: "img/Kit Com 4 Toalhas Banhão Gigante.jpg" },
             { name: "Kit Utensílios", price: 0.00, image: "img/KIT DE UTENSÍLIOS - PRETO OU CINZA.jpg" },
