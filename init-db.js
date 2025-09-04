@@ -50,7 +50,7 @@ const createAndPopulateDb = async () => {
             { name: "Kit 2 Travesseiros", price: 0.00, image: "img/Kit 2 Travesseiros.jpg" },
             { name: "Kit Cobre Leito Colcha Queen 3 Peças", price: 0.00, image: "img/Kit Cobre Leito Colcha Queen 3Pç.jpg" },
             { name: "Kit 4 Toalhas", price: 0.00, image: "img/Kit Com 4 Toalhas Banhão Gigante.jpg" },
-            { name: "Kit Utensílios", price: 0.00, image: "img/KIT DE UTENSÍLIOS - PRETO OU CINZA.jpg" },
+            { name: "Kit Utensílios - Cinza ou Preto", price: 0.00, image: "img/utensílios-completo.jpg" },
             { name: "Kit Faqueiro", price: 0.00, image: "img/Kit Faqueiro Tramontina - 20 peças.jpg" },
             { name: "Kit Potes", price: 0.00, image: "img/Kit Potes Herméticos - Vidro Com Tampa De Bambu.jpg" },
             { name: "Kit Travessa", price: 0.00, image: "img/Kit Travessa De Vidro Branca.jpg" },
