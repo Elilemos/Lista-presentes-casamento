@@ -23,9 +23,7 @@ header {
     font-size: 1.5rem;
     color: black;
     -webkit-text-stroke: 1px gray;
-    text-stroke: 1px gray;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    border: none;
 }
 
 #present-list-container {
