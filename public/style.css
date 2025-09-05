@@ -28,9 +28,6 @@ header {
     padding: 5px 10px;
     display: block;
     border-radius: 5px;
-    text-shadow: none;
-    -webkit-text-stroke: none;
-    text-stroke: none;
 }
 
 #present-list-container {
