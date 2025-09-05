@@ -54,7 +54,6 @@ const createAndPopulateDb = async () => {
             { name: "Lava e Seca", price: 0.00, image: "img/Lava e Seca EOS 10,1kg Power Wash Titanium ELR2107LST 220V PRETA OU CINZA - 2699,00.jpg" },
             { name: "Liquidificador - Preto ou Cinza", price: 0.00, image: "img/Liquidificador.jpg" },
             { name: "Manta Queen", price: 0.00, image: "img/Manta queen - Tons Escuros.jpg" },
-            { name: "Manta Queen", price: 0.00, image: "img/Mantas De Casal - Queen (Tons Escuros).jpg" },
             { name: "Mesa de Jantar", price: 0.00, image: "img/Mesa de Jantar Retangular Iluminata Com 4 cadeiras Cinzas - 830,00.jpg" },
             { name: "Micro-ondas - Preto ou Cinza", price: 0.00, image: "img/Micro-ondas Philco 25 Litros Espelhado - PRETOP OU CINZA - 617,50.jpg" },
             { name: "Multiprocessador", price: 0.00, image: "img/Multiprocessador.jpg" },
