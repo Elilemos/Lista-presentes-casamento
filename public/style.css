@@ -23,9 +23,10 @@ header {
     font-size: 1.5rem;
     color: black;
     text-align: center;
+    background-color: gray;
     border: 1px solid gray;
     padding: 5px 10px;
-    display: inline-block;
+    display: block;
     border-radius: 5px;
     text-shadow: none;
     -webkit-text-stroke: none;
