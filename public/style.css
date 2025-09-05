@@ -19,9 +19,9 @@ header {
 }
 
 .gift-item .gift-details h2 {
-    font-family: 'Dancing Script';
+    font-family: Arial, sans-serif;
     font-size: 1.5rem;
-    color: black;
+    color: white;
     text-align: center;
     background-color: gray;
     border: 1px solid gray;
