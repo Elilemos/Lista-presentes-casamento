@@ -20,7 +20,7 @@ header {
 
 .gift-item .gift-details h2 {
     font-family: Arial, sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     color: white;
     text-align: center;
     background-color: gray;
@@ -40,9 +40,9 @@ header {
 
 .gift-item {
     background-color: transparent;
-    border: 1px solid #12c5fb9e;
+    border: 1px solid white;
     border-radius: 8px;
-    box-shadow: 0 2px 5px #12c5fb9e;
+    box-shadow: 0 2px 5px white;
     width: 300px;
     text-align: center;
     overflow: hidden;
